@@ -2,7 +2,8 @@
 #ifndef LIST_H
 #define LIST_H
 
-namespace my {
+namespace my
+{
     template <typename T>
     struct ListNode
     {
@@ -12,19 +13,21 @@ namespace my {
         inline ListNode() :data(0), next(nullptr), prev(nullptr)
         {
         }
-       inline  ListNode(const T& data) : data(data), next(nullptr), prev(nullptr){}
+        inline  ListNode(const T& data) : data(data), next(nullptr), prev(nullptr){}
         inline ListNode(const T& data1, ListNode *prev1, ListNode *next1):data(data1),next(next1),prev(prev1){}
     };
-template <typename T>
-     class list<T>{
-         public:
-         ListNode<T> *head;
-         list();
-         ~list();
+    template <typename T>
+         class list{
+    public:
+        ListNode<T> *head;
+        list();
+        ~list()=default;
 
-         void add(const T& data);
-         bool remove(const T& data);
-         bool insert(const T& data1,const T& data2);
-} // my
+        void add(const T& data);
+        bool remove(const T& data);
+        bool insert(const T& data1,const T& data2);
+    };
+    template class list<int>;
+}// my
 
 #endif //LIST_H

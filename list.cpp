@@ -6,13 +6,12 @@
 
 namespace my
 {      template <typename T>
- {   list<T>::list()
-
-        head=new ListNode<T>();
-
-    }
+    list<T>::list()
+{
+    head=new ListNode<T>();
+}
     template <typename T>
-    void list<T>:: add(T& data)
+    void list<T>:: add(const T& data)
     {
         ListNode<T>* newnode = new ListNode<T>(data);
         newnode->next=nullptr;
@@ -26,7 +25,7 @@ namespace my
 
     }
   template <typename T>
-    bool list<T>::remove(const T& data);
+    bool list<T>::remove(const T& data)
     {
         ListNode<T>* p=this->head;
     while (p->next!=nullptr&&p->data!=data)
