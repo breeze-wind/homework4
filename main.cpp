@@ -18,4 +18,12 @@ int main()
         std::cout<<p->data<<std::endl;
 
     }
+    mylist.remove(10);
+    p=mylist.head;
+    while (p->next!=nullptr)
+    {
+        p=p->next;
+        std::cout<<p->data<<std::endl;
+
+    }
 }
