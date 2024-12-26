@@ -8,7 +8,7 @@ namespace my
 {      template <typename T>
     list<T>::list()
 {
-    head=new ListNode<T>();
+    head=new ListNode<T>;
 }
     template <typename T>
     void list<T>:: add(const T& data)
@@ -40,6 +40,8 @@ namespace my
     {
         p->next->prev=p->prev;
         p->prev->next=p->next;
+        delete p;
+        return true;
     }
     }
     template<typename T>
@@ -52,6 +54,7 @@ namespace my
         }
         if (p->next==nullptr)
         {
+            delete p;
             return false;
         }
         else
@@ -60,6 +63,8 @@ namespace my
             newnode->next=p->next;
             p->next->prev=newnode;
             newnode->prev=p->prev;
+            delete p;
+            return true;
         }
 
     }

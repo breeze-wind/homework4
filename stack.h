@@ -11,14 +11,18 @@ template <typename T>
 class stack {
 public: stack();
     ~stack()=default;
-      T* top() ;
+     const T& top() ;
     void push(const T& data);
-    void pop(const T& data);
+    const T& pop(const T& data);
 private:
-    list<T> stacklist ;
+    list<T> stacklist;
+
 
 };
 
 } // my
-
+template class my::stack <int>
+template class my::stack <char>
+template class my::stack <float>
+template class my::stack <double>;
 #endif //STACK_H

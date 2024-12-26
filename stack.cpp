@@ -5,4 +5,34 @@
 #include "stack.h"
 
 namespace my {
+    template <typename T>
+    stack<T>::stack()
+    {
+        stacklist.head=new ListNode<T>();
+        top=stacklist.head;
+    }
+    template <typename T>
+    void stack<T>::push(const T& data)
+    {
+        ListNode<T>* newnode = new ListNode<T>(data);
+        newnode->next=nullptr;
+        ListNode<T>* p=stacklist.head;
+        while (p->next!=nullptr)
+        {
+            p=p->next;
+        }
+        p->next=newnode;
+        newnode->prev=p;
+        top=newnode;
+    }
+    template <typename T>
+    const T stack<T>::pop(const T& data)
+    {
+        T temp=top->data;
+
+    }
+
+
+
+
 } // my
