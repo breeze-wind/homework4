@@ -1,5 +1,6 @@
 #include <iostream>
 #include"list.h"
+#include "stack.h"
 
 int main()
 {
@@ -25,5 +26,13 @@ int main()
         p=p->next;
         std::cout<<p->data<<std::endl;
 
+    }
+    my::stack<int> mystack;
+    mystack.push(1);
+    mystack.push(2);
+    mystack.push(3);
+    while (mystack.top!=mystack.head)
+    {
+        std::cout<<mystack.pop()<<std::endl;
     }
 }

@@ -26,9 +26,13 @@ namespace my {
         top=newnode;
     }
     template <typename T>
-    const T stack<T>::pop(const T& data)
+    const T& stack<T>::pop(void)
     {
-        T temp=top->data;
+       const T& temp=top->data;
+        top=top->prev;
+        delete top->next;
+        top->next=nullptr;
+        return temp;
 
     }
 
