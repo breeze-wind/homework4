@@ -4,6 +4,8 @@
 
 #include "stack.h"
 
+#include <algorithm>
+
 namespace my {
     template <typename T>
     stack<T>::stack()
@@ -35,6 +37,15 @@ namespace my {
         return temp;
 
     }
+    template <typename T>
+    void stack<T>::clear()
+    {
+        stacklist.clear();
+    }
+
+
+
+
 
 
 

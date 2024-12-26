@@ -4,6 +4,8 @@
 
 #include "list.h"
 
+#include <iostream>
+
 namespace my
 {      template <typename T>
     list<T>::list()
@@ -68,6 +70,22 @@ namespace my
         }
 
     }
+    template <typename T>
+    void list<T>::clear()
+    {
+        ListNode<T>* p=this->head;
+    while (p->next!=nullptr)
+    {
+
+        p=p->next;
+        delete p->prev;
+    }
+    delete p->next;
+    delete p;
+    //std::cout<<typeid()<<" already clear"<<std::endl;
+
+    }
+
 
 
 

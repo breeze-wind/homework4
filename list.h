@@ -19,13 +19,14 @@ namespace my
     template <typename T>
          class list{
     public:
-        ListNode<T> *head;
-        list();
+        ListNode<T> *head;//头结点
+       explicit list();
         ~list()=default;
 
-        void add(const T& data);
-        bool remove(const T& data);
-        bool insert(const T& data1,const T& data2);
+        void add(const T& data);//链表结尾添加节点
+        bool remove(const T& data);//搜索并删除节点
+        bool insert(const T& data1,const T& data2);//搜索data1并在该节点后插入节点（数据为data2)
+        void clear(void);
     };
     template class list<int>;
     template class list<char>;

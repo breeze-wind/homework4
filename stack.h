@@ -9,16 +9,17 @@
 namespace my {
 template <typename T>
 class stack {
-public: stack();
+public: explicit stack() ;//初始化时给链表头结点分配空间
     ~stack()=default;
-    ListNode<T>* top ;
-    void push(const T& data);
-    T pop(void);
+    ListNode<T>* top ;//标记栈顶位置，节省时间
+
+    void push(const T& data);//压栈（直接调用的list.add）
+    T pop(void);//出栈，自动返回栈顶
+
    // ListNode<T>* head=stacklist.head;
 
     list<T> stacklist;
-
-
+    void clear(void);//清除栈
 };
 
 } // my

@@ -7,4 +7,7 @@ add_executable(homework4 main.cpp
         stack.cpp
         stack.h
         list.cpp
-        list.h)
+        list.h
+        queue.cpp
+        queue.h
+)
