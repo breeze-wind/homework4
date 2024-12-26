@@ -31,7 +31,7 @@ int main()
     mystack.push(1);
     mystack.push(2);
     mystack.push(3);
-    while (mystack.top!=mystack.head)
+    while (mystack.top!=mystack.stacklist.head)
     {
         std::cout<<mystack.pop()<<std::endl;
     }

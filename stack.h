@@ -13,9 +13,9 @@ public: stack();
     ~stack()=default;
     ListNode<T>* top ;
     void push(const T& data);
-    const T& pop(void);
-    ListNode<T>* head=stacklist.head;
-private:
+    T pop(void);
+   // ListNode<T>* head=stacklist.head;
+
     list<T> stacklist;
 
 
